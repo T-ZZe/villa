@@ -1,0 +1,15 @@
+name: Villages
+version: 1.1
+main: fr.villages.VillagesPlugin
+api-version: "26.3"
+softdepend: [BetterTree, Arbres]
+commands:
+  villages:
+    description: Villages et structures améliorés (admin)
+    usage: /villages convert [rayon] | /villages reload | /villages stats
+    permission: villages.admin
+    permission-message: "§cCette commande est réservée aux opérateurs."
+permissions:
+  villages.admin:
+    description: Utiliser /villages
+    default: op

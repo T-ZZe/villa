@@ -1,0 +1,48 @@
+# Mondes concernés (liste de noms). Vide = tous les mondes normaux (overworld).
+worlds: []
+
+# Améliore aussi les structures déjà présentes dans les chunks NEUFS uniquement (false) ou aussi dans les chunks
+# anciens quand ils se chargent (true). Mets true seulement si tu veux améliorer un monde existant en te promenant.
+# (Chaque structure n'est améliorée qu'une seule fois : la liste est gardée dans processed.txt.)
+existing-chunks: false
+
+# ----------------------------------------------------------------------------- VILLAGES
+# Les 5 types : plaines, désert, savane, neige, taïga. Chaque village est amélioré une seule fois.
+villages:
+  enabled: true
+  lamps: true             # lampadaires le long des chemins (poteau + lanterne)
+  lamp-density: 0.05      # plus c'est haut, plus il y en a (ils restent espacés d'au moins 7 blocs)
+  door-lanterns: true     # une lanterne près de chaque porte de maison
+  yards: true             # jardinets autour des maisons (fleurs, buissons, bûches, bancs, tonneaux...)
+  yard-density: 1.0       # 1.0 = normal, 2.0 = deux fois plus de décors, 0.5 = moitié
+  path-wear: true         # chemins plus naturels (terre tassée, gravier, bords usés)
+  foundations: true       # fondations sous les maisons qui flottent sur les pentes
+  chimneys: true          # cheminées en pierre qui fument (feu de camp) sur le faîte de certaines maisons
+  chimney-chance: 0.5     # probabilité par maison
+  vines: true             # lierre sur les murs de certaines maisons (plaines, savane, taïga)
+  vine-chance: 0.35       # probabilité par maison
+
+# ----------------------------------------------------------------------------- STRUCTURES
+pyramid:                  # temple du désert : piliers, éboulis, dunes, cactus
+  enabled: true
+witch-hut:                # maison de sorcière : ponton, lanternes, champignons, nénuphars
+  enabled: true
+igloo:                    # igloo : feu de camp, bonhomme de neige, congères, lampadaires
+  enabled: true
+jungle-temple:            # temple de la jungle : lianes, mousse, piliers brisés, buissons
+  enabled: true
+
+# ----------------------------------------------------------------------------- NOUVELLES STRUCTURES
+# Tour de guet en bois : TRÈS rare, dans les forêts de taïga (toutes les variantes).
+# Le monde est découpé en cases de 12x12 chunks ; chaque case a "chance" de contenir une tour.
+# 0.30 = environ une tour tous les 350 blocs de taïga. Mets 0.10 pour encore plus rare.
+wooden-tower:
+  enabled: true
+  chance: 0.30
+  chest: true             # coffre de ravitaillement dans la tour
+
+# Maison champignon sur l'île champignon (cases de 4x4 chunks, "chance" par case).
+mushroom-house:
+  enabled: true
+  chance: 0.35
+  chest: true
